@@ -1,0 +1,396 @@
+.rooms-filter-form {
+    background-image: url(../img/img-rooms/background-image-filter.png);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.inner-container {
+    width: 70%;
+    padding: 5px 35px;
+}
+
+.filter-form {
+    display: flex;
+    min-height: 50px;
+    color: #fff;
+}
+
+.rooms-services {
+    width: 100%;
+}
+
+.filter-name  {
+    padding-bottom: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.input-item {
+    position: relative;
+}
+
+.input-item input {
+    display: none;
+}
+
+.input-item label {
+    padding-left: 25px;
+}
+
+.input-item label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-image: url(../img/img-rooms/checkbox-off.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+    background-size: cover;
+}
+
+.input-item input:checked + label::before {
+    background-image: url(../img/img-rooms/checkbox-on.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+}
+  
+
+.sorting-inner-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #ae8e61;
+    padding: 5px 0;
+}
+
+.sorting-result {
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 700;
+    justify-content: center;
+}
+
+.sorting-type-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sorting-type  {
+    color: black;
+    border-bottom: 1px dotted #90b2d0;
+    text-decoration: none;
+}
+
+.sorting-type:focus {
+    color: #90b2d0;
+    border: none;
+}
+
+.sorting-arrows {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.sorting-arrows a {
+    font-size: 0;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.up path, 
+.down path {
+    fill: black;
+}
+
+.up:focus path, 
+.down:focus path {
+    fill: #90b2d0;
+}
+
+
+.rooms-title {
+    padding: 5px 0;
+    font-size: 1.2rem;
+    color: black;
+    text-align: center;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.rooms-title::after {
+    content: '';
+    display: block;
+    width: 65px;
+    height: 2px;
+    margin: 5px auto;
+    background-color: #ae8e61;
+}
+
+.rooms-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.rooms-list-item {
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: 1px solid #ae8e61;
+}
+
+.rooms-inner-container {
+    width: 100%;
+    margin: 5px auto;
+
+}
+
+.rooms-picture {
+    max-width: 400px;
+    width: 100%;
+}
+
+.rooms-name {
+    padding: 5px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.general-description {
+    font-style: italic;
+}
+
+.rooms-actions {
+    padding: 5px 0;
+}
+
+.rooms-price {
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.button-more,
+.button-book {
+    display: block;
+    width: 120px;
+    height: 30px;
+
+    color: #fff;
+    margin: 5px 0;
+
+    font-size: 1.1rem;
+    line-height: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-more {
+    background-color:  #90b2d0;
+}
+
+.button-book {
+    background-color: #706358;
+}
+
+.button-more:hover,
+.button-more:focus,
+.button-more:active {
+  background-color: #663d15;
+}
+
+.button-book:hover,
+.button-book:focus,
+.button-book:active {
+  background-color: black;
+}
+
+.pagination-list {
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.pagination-item {
+    display: inline-block;
+    width: 25px;
+    height: 15px;
+}
+
+.pagination-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    color: #fff;
+
+    background-color: #90b2d0;
+}
+
+.pagination-item a:hover,
+.pagination-item a:focus,
+.pagination-item a:active {
+  background-color: #663d15;
+}
+
+@media (min-width: 768px) {
+
+    .inner-container {
+        padding: 10px 35px;
+    }
+
+    .filter-name  {
+        padding-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .input-item {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .input-item label {
+        text-transform: uppercase;
+        padding-left: 30px;
+    }
+
+    .input-item label::before {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sorting-inner-container {
+        padding: 20px 0;
+    }
+    
+    .sorting-result {
+        font-size: 1.2rem;
+        justify-content: flex-start;
+    }
+    
+    .sorting-type-group {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60%;
+    }
+    
+    .sorting-type:focus,
+    .sorting-type:active {
+        color: #90b2d0;
+        border: none;
+    }
+    
+    .sorting-arrows {
+        position: relative;
+        justify-content: flex-end;
+    }
+
+
+    .rooms-title {
+        padding: 15px 0;
+        font-size: 1.3rem;
+    }
+    
+    .rooms-title::after {
+        width: 95px;
+    }
+    
+    .rooms-list-item {
+        padding: 20px 0;
+    }
+    
+    .rooms-inner-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .rooms-name {
+        padding: 15px 0;
+        font-size: 1.2rem;
+    }
+    
+    .general-description {
+        font-size: 1.1rem;
+        font-style: italic;
+    }
+    
+    .rooms-actions {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .rooms-price {
+        padding: 10px 0;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+    
+    .button-more,
+    .button-book {
+        margin: 0 10px;
+        font-size: 1.1rem;
+    }
+    
+    .pagination-list {
+        margin: 15px 0;
+    }
+    
+    .pagination-item {
+        width: 35px;
+        height: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .inner-container {
+        padding: 15px 45px;
+    }
+    
+    .filter-name  {
+        padding-bottom: 20px;
+    }
+    
+    .input-item {
+        margin-bottom: 30px;
+    }
+    
+    .input-item label {
+        padding-left: 40px;
+    }
+    
+    .input-item label::before {
+        width: 25px;
+        height: 25px;
+    }
+
+    .sorting-inner-container {
+        padding: 25px 0;
+    }
+    
+    .sorting-result {
+        font-size: 1.3rem;
+    }
+
+
+    .rooms-title {
+        padding: 20px 0;
+        font-size: 1.5rem;
+    }
+    
+    .rooms-title::after {
+        width: 125px;
+    }
+    
+    .rooms-list-item {
+        padding: 30px 0;
+    }
+
+}

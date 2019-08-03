@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/rooms.css">
+    <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript" src="js/localStorage.js"></script>
     <script src="https://kit.fontawesome.com/7d03a348e8.js"></script>
+
     <title>rooms</title>
 </head>
-<body>
+<body onload="fillAllRoomsNotSorted();">
     <div class="page-wrapper">
         <div class="header-wrapper">
             <header class="main-header">
@@ -83,13 +86,33 @@
                         </section>
                         <section class="sorting">
                             <div class="sorting-inner-container">
-                                <p class="sorting-result">Найдено: 3</p>
+                                <p class="sorting-result" id = "counts"></p>
                                 <div class="sorting-type-group">
                                     <b>Сортировка:</b>
                                     <a class="sorting-type" href="">По цене</a>
+                                    <div class="sorting-arrows">                                      
+                                        <a class="up" href="#" onclick="fillAllRoomsByPriceAsc()">
+                                            Вверх
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 0L0 10h11z"/></svg>
+                                        </a>
+                                        <a class="down" href="#" onclick="fillAllRoomsByPriceDesc()">
+                                            Вниз
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
+                                        </a>
+                                    </div>
                                     <a class="sorting-type" href="">По количеству мест в комнате</a>
+                                    <div class="sorting-arrows">                                      
+                                        <a class="up" href="#" onclick="fillAllRoomsByCapabilityAsc()">
+                                            Вверх
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 0L0 10h11z"/></svg>
+                                        </a>
+                                        <a class="down" href="#" onclick="fillAllRoomsByCapabilityDesc()">
+                                            Вниз
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="sorting-arrows">                                      
+                                <!-- <div class="sorting-arrows">                                      
                                     <a class="up" href="">
                                         Вверх
                                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 0L0 10h11z"/></svg>
@@ -98,60 +121,15 @@
                                         Вниз
                                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </section>
                         <section class="rooms-found">
                                 <h2 class="rooms-title">Номера</h2>
                                 <ul class="rooms-list">
-                                    <li class="rooms-list-item">
-                                        <div class="rooms-inner-container">
-                                            <img class="rooms-picture" src="img/img-rooms/1people.jpg" alt="Фото одноместного номера">
-                                            <div class="rooms-description">
-                                                <p class="rooms-name">Одноместный номер</p>
-                                                <div class="rooms-type">
-                                                    <p class="general-description">Наши одноместные номера площадью 11 м² включают постельное белье, пуховое одеяло, удобные подушки, шкаф и письменный стол.</p>
-                                                    <p class="rooms-price">100$</p>
-                                                </div>
-                                                <div class="rooms-actions">
-                                                    <a class="button button-more" href="room.html">Подробнее</a>
-                                                    <a class="button button-book" href="">Забронировать</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="rooms-list-item">
-                                        <div class="rooms-inner-container">
-                                            <img class="rooms-picture" src="img/img-rooms/2people.jpg" alt="Фото двухместного номера">
-                                            <div class="rooms-description">
-                                                <p class="rooms-name">Двухместный номер</p>
-                                                <div class="rooms-type">
-                                                    <p class="general-description">Наши двухместные номера площадью 13 м² включают двуспальную кровать с пуховым одеялом, шкаф, письменный стол, кондиционер.</p>
-                                                    <p class="rooms-price">200$</p>
-                                                </div>
-                                                <div class="rooms-actions">
-                                                    <a class="button button-more" href="">Подробнее</a>
-                                                    <a class="button button-book" href="">Забронировать</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="rooms-list-item">
-                                        <div class="rooms-inner-container">
-                                            <img class="rooms-picture" src="img/img-rooms/3people.jpg" alt="Фото трехместного номера">
-                                            <div class="rooms-description">
-                                                <p class="rooms-name">Трехместный номер</p>
-                                                <div class="rooms-type">
-                                                    <p class="general-description">Это просторные номера площадью от 17 до 21 м², которые могут вместить три или четыре человека. В каждом из них есть постельное белье, одеяла и удобные подушки.</p>
-                                                    <p class="rooms-price">300$</p>
-                                                </div>
-                                                <div class="rooms-actions">
-                                                    <a class="button button-more" href="">Подробнее</a>
-                                                    <a class="button button-book" href="">Забронировать</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    <div id="rooms">
+
+                                    </div>
                                 </ul>
                                 <ul class="pagination-list">
                                     <li class="pagination-item"><a href="">1</a></li>

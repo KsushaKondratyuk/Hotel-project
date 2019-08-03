@@ -1,0 +1,31 @@
+data = '{ "1":{\
+      "room_name":"ОДНОМЕСТНЫЙ НОМЕР",\
+      "room_small_description":"Наши одноместные номера площадью 11 м² включают постельное белье, пуховое одеяло, удобные подушки, шкаф и письменный стол.",\
+      "room_big_description": "Наши одноместные номера площадью 11 м² включают постельное белье, пуховое одеяло, удобные подушки, шкаф и письменный стол.",\
+      "room_image": "img/img-rooms/1people.jpg",\
+	  "room_image_add": ["img/img-rooms/1people-in-1.jpg","img/img-rooms/1people-in-2.jpg","img/img-rooms/1people-in-3.jpg"],\
+      "room_capability": 1,\
+      "room_price": 200,\
+      "room_options": ["TV"]\
+    },\
+    "2":{\
+      "room_name":"ДВУХМЕСТНЫЙ НОМЕР",\
+      "room_small_description":"Наши двухместные номера площадью 13 м² включают двуспальную кровать с пуховым одеялом, шкаф, письменный стол, кондиционер.",\
+      "room_big_description": "...",\
+      "room_image": "img/img-rooms/2people.jpg",\
+	  "room_image_add": ["img/img-rooms/2people-in-1.jpg","img/img-rooms/2people-in-2.jpg","img/img-rooms/2people-in-3.jpg"],\
+      "room_capability": 2,\
+      "room_price": 100,\
+      "room_options": ["A/C", "WI-FI"]\
+    },\
+    "3":{\
+      "room_name":"ТРЕХМЕСТНЫЙ НОМЕР",\
+      "room_small_description":"Это просторные номера площадью от 17 до 21 м², которые могут вместить три или четыре человека. В каждом из них есть постельное белье, одеяла и удобные подушки.",\
+      "room_big_description": "...",\
+      "room_image": "img/img-rooms/3people.jpg",\
+	  "room_image_add": ["img/img-rooms/3people-in-1.jpg","img/img-rooms/3people-in-2.jpg","img/img-rooms/3people-in-3.jpg"],\
+      "room_capability": 3,\
+      "room_price": 300,\
+      "room_options": ["A/C", "WI-FI", "BREAKFAST"]\
+    }\
+}';

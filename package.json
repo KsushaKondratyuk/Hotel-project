@@ -1,0 +1,26 @@
+{
+  "name": "nodejs_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx lite-server -c bs-config.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KsushaKondratyuk/Hotel-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KsushaKondratyuk/Hotel-project/issues"
+  },
+  "homepage": "https://github.com/KsushaKondratyuk/Hotel-project#readme",
+  "dependencies": {
+    "lite-server": "^2.5.3",
+    "npm": "^6.10.2",
+    "npx": "^10.2.0"
+  }
+}

@@ -39,8 +39,7 @@ function readJSONToArray() {
 function fillAllRooms(roomData) {
 	i = 0;
 	str = "";
-	console.log(roomData);
-	for(let element in roomData) {
+	for(var element in roomData) {
 		str += " <li class='rooms-list-item'>";
 		str += " <div class='rooms-inner-container'>";
 		str +=	"<img class='rooms-picture' src=" + roomData[element][1].room_image + " alt='Фото одноместного номера'>";
@@ -103,7 +102,7 @@ function fillAllRoomsByCapabilityAsc(){
 	//sort
 	items.sort(function(first, second) {
 		return first[1].room_capability - second[1].room_capability;
-	  });
+	});
 	
 	fillAllRooms(items);
 }
@@ -148,4 +147,35 @@ function fillRoom() {
 
 	document.getElementById("room_info").innerHTML = str;
 }
+
+function onShowButtonClick() {
+ var items = readJSONToArray();
+ var checkboxes = document.querySelectorAll('.input-item input:checked');
+
+ var conditions = Array.from(checkboxes).map(function (item) {
+  return item.name;
+ });
+ console.log(conditions);
+
+ var conditionItems = items.filter(function (room) {
+  for (var i = 0; i < conditions.length; i++) {
+   if (room[1].room_options.indexOf(conditions[i]) === -1) {
+	return false;
+   }
+  }
+ return true;
+});
+
+ fillAllRooms(conditionItems);
+
+}
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+// 	var sortUpByPrice = document.querySelectorAll('.sorting-arrows .up')[0];
+// 	var sortUpByCapability = document.querySelectorAll('.sorting-arrows .up')[1];
+// 	sortUpByPrice.addEventListener('click', fillAllRoomsByPriceAsc);
+// 	sortUpByCapability.addEventListener('click', fillAllRoomsByCapabilityAsc);
+// });
+
 

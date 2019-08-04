@@ -76,7 +76,7 @@
 .sorting-inner-container {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     border-bottom: 1px solid #ae8e61;
     padding: 5px 0;
 }
@@ -85,7 +85,6 @@
     display: flex;
     font-size: 1.1rem;
     font-weight: 700;
-    justify-content: center;
 }
 
 .sorting-type-group {
@@ -97,7 +96,6 @@
 .sorting-type  {
     color: black;
     border-bottom: 1px dotted #90b2d0;
-    text-decoration: none;
 }
 
 .sorting-type:focus {
@@ -108,7 +106,6 @@
 .sorting-arrows {
     position: relative;
     display: flex;
-    justify-content: center;
 }
 
 .sorting-arrows a {
@@ -268,17 +265,18 @@
 
     .input-item {
         position: relative;
-        margin-bottom: 25px;
+        margin-bottom: 26px;
+        line-height: 26px;
     }
 
     .input-item label {
         text-transform: uppercase;
-        padding-left: 30px;
+        padding-left: 40px;
     }
 
     .input-item label::before {
-        width: 20px;
-        height: 20px;
+        width: 26px;
+        height: 26px;
     }
 
     .button-show {
@@ -387,12 +385,12 @@
     }
     
     .input-item label {
-        padding-left: 40px;
+        padding-left: 50px;
     }
-    
+
     .input-item label::before {
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
     }
 
     .sorting-inner-container {

@@ -16,7 +16,7 @@ data = '{ "1":{\
 	  "room_image_add": ["img/img-rooms/2people-in-1.jpg","img/img-rooms/2people-in-2.jpg","img/img-rooms/2people-in-3.jpg"],\
       "room_capability": 2,\
       "room_price": 100,\
-      "room_options": ["A/C", "WI-FI"]\
+      "room_options": ["air-conditioning", "wi-fi"]\
     },\
     "3":{\
       "room_name":"ТРЕХМЕСТНЫЙ НОМЕР",\
@@ -26,6 +26,6 @@ data = '{ "1":{\
 	  "room_image_add": ["img/img-rooms/3people-in-1.jpg","img/img-rooms/3people-in-2.jpg","img/img-rooms/3people-in-3.jpg"],\
       "room_capability": 3,\
       "room_price": 300,\
-      "room_options": ["A/C", "WI-FI", "BREAKFAST"]\
+      "room_options": ["air-conditioning", "wi-fi", "breakfast", "TV"]\
     }\
 }';

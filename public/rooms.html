@@ -12,7 +12,7 @@
 
     <title>rooms</title>
 </head>
-<body onload="fillAllRoomsNotSorted();">
+<body onload="fillAllRoomsNotSorted()">
     <div class="page-wrapper">
         <div class="header-wrapper">
             <header class="main-header">
@@ -79,7 +79,7 @@
                                             <input type="checkbox" name="breakfast" id="breakfast">
                                             <label for="breakfast">Breakfast</label>
                                         </p>
-                                        <button class="button button-show">Показать</button>
+                                        <button type="button" class="button button-show" onclick="onShowButtonClick()">Показать</button>
                                     </div>
                                 </form> 
                             </div>
@@ -89,7 +89,7 @@
                                 <p class="sorting-result" id = "counts"></p>
                                 <div class="sorting-type-group">
                                     <b>Сортировка:</b>
-                                    <a class="sorting-type" href="">По цене</a>
+                                    <p class="sorting-type">По цене</p>
                                     <div class="sorting-arrows">                                      
                                         <a class="up" href="#" onclick="fillAllRoomsByPriceAsc()">
                                             Вверх
@@ -112,16 +112,6 @@
                                         </a>
                                     </div>
                                 </div>
-                                <!-- <div class="sorting-arrows">                                      
-                                    <a class="up" href="">
-                                        Вверх
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 0L0 10h11z"/></svg>
-                                    </a>
-                                    <a class="down" href="">
-                                        Вниз
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
-                                    </a>
-                                </div> -->
                             </div>
                         </section>
                         <section class="rooms-found">

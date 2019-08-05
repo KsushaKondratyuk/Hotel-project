@@ -55,6 +55,8 @@
     background-image: url(../img/img-rooms/checkbox-on.svg);
     background-repeat: no-repeat;
     background-position: 0 0 ;
+    width: 11.7px;
+    height: 10px;
 }
 
 .button {
@@ -265,8 +267,8 @@
 
     .input-item {
         position: relative;
-        margin-bottom: 26px;
-        line-height: 26px;
+        margin-bottom: 25px;
+        line-height: 25px;
     }
 
     .input-item label {
@@ -275,8 +277,13 @@
     }
 
     .input-item label::before {
-        width: 26px;
-        height: 26px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .input-item input:checked + label::before {
+        width: 29.5px;
+        height: 25px;
     }
 
     .button-show {
@@ -389,8 +396,13 @@
     }
 
     .input-item label::before {
+        width: 30px;
+        height: 30px;
+    }
+
+    .input-item input:checked + label::before {
         width: 35px;
-        height: 35px;
+        height: 30px;
     }
 
     .sorting-inner-container {

@@ -163,6 +163,10 @@
         max-width: 200px;
     }
 
+    .room-active {
+        border: 2px solid #90b2d0;
+    }
+
     .room-information {
         width: 40%;
         padding: 0 20px;

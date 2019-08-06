@@ -3,7 +3,7 @@ data = '{ "1":{\
       "room_small_description":"Наши одноместные номера площадью 11 м² включают постельное белье, пуховое одеяло, удобные подушки, шкаф и письменный стол.",\
       "room_big_description": "Наши одноместные номера площадью 11 м² включают постельное белье, пуховое одеяло, удобные подушки, шкаф и письменный стол. В них есть все необходимые удобства: кондиционер, бесплатный Wi-Fi, телевизор с плоским экраном и спутниковыми каналами и т. д. Также в номерах имеется чистая и светлая ванная комната с душем. В ней вы найдете все, что вам нужно, в том числе фен и туалетные принадлежности.",\
       "room_image": "img/img-rooms/1people.jpg",\
-	  "room_image_add": ["img/img-rooms/1people-in-1.jpg","img/img-rooms/1people-in-2.jpg","img/img-rooms/1people-in-3.jpg"],\
+	  "room_image_add": ["img/img-rooms/1people-in-1.jpg","img/img-rooms/1people-in-2.jpg","img/img-rooms/1people-in-3.jpg", "img/img-rooms/1people.jpg"],\
       "room_capability": 1,\
       "room_price": 200,\
       "room_options": ["TV", "wi-fi", "breakfast"]\
@@ -13,7 +13,7 @@ data = '{ "1":{\
       "room_small_description":"Наши двухместные номера площадью 13 м² включают двуспальную кровать с пуховым одеялом, шкаф, письменный стол, кондиционер.",\
       "room_big_description": "Наши двухместные номера площадью 13 м² включают двуспальную кровать с пуховым одеялом, шкаф, письменный стол, кондиционер, телевизор с плоским экраном и спутниковыми каналами, сейф. В них вы найдете чай и кофе, приветственный набор и бесплатный Wi-Fi. Из всех номеров открывается красивый вид на улицу. Ванная комната оборудована душем и всеми необходимыми туалетными принадлежностями, включая фен.",\
       "room_image": "img/img-rooms/2people.jpg",\
-	  "room_image_add": ["img/img-rooms/2people-in-1.jpg","img/img-rooms/2people-in-2.jpg","img/img-rooms/2people-in-3.jpg"],\
+	  "room_image_add": ["img/img-rooms/2people-in-1.jpg","img/img-rooms/2people-in-2.jpg","img/img-rooms/2people-in-3.jpg", "img/img-rooms/2people.jpg"],\
       "room_capability": 2,\
       "room_price": 150,\
       "room_options": ["air-conditioning", "wi-fi"]\
@@ -23,7 +23,7 @@ data = '{ "1":{\
       "room_small_description":"Это просторные номера площадью от 17 до 21 м², которые могут вместить три человека. В каждом из них есть постельное белье, одеяла и удобные подушки.",\
       "room_big_description": "Это просторные номера площадью от 17 до 21 м², которые могут вместить три или четыре человека. В каждом из них есть постельное белье, одеяла и удобные подушки.Кроме того, в вашем распоряжении отдельный кондиционер, бесплатный Wi-Fi, телевизор с плоским экраном, фен, сейф, приветственный набор и туалетные принадлежности... В номерах вы найдете все, что нужно, для приятного отдыха. Из каждого из них открывается прекрасный вид на очаровательную церковь или на каменные фасады зданий, расположенных на улице де Турбиго (rue de Turbigo).",\
       "room_image": "img/img-rooms/3people.jpg",\
-	  "room_image_add": ["img/img-rooms/3people-in-1.jpg","img/img-rooms/3people-in-2.jpg","img/img-rooms/3people-in-3.jpg"],\
+	  "room_image_add": ["img/img-rooms/3people-in-1.jpg","img/img-rooms/3people-in-2.jpg","img/img-rooms/3people-in-3.jpg", "img/img-rooms/3people.jpg"],\
       "room_capability": 3,\
       "room_price": 300,\
       "room_options": ["air-conditioning", "wi-fi", "breakfast", "TV"]\
@@ -33,7 +33,7 @@ data = '{ "1":{\
  	  "room_small_description":"Наши двухместные номера площадью 13 м² включают двуспальную кровать с пуховым одеялом, шкаф, письменный стол, кондиционер.",\
       "room_big_description": "Наши двухместные номера площадью 13 м² включают двуспальную кровать с пуховым одеялом, шкаф, письменный стол, кондиционер, телевизор с плоским экраном и спутниковыми каналами, сейф. В них вы найдете чай и кофе, приветственный набор и бесплатный Wi-Fi. Из всех номеров открывается красивый вид на улицу. Ванная комната оборудована душем и всеми необходимыми туалетными принадлежностями, включая фен.",\
       "room_image": "img/img-rooms/22people.jpg",\
-	  "room_image_add": ["img/img-rooms/22people-in-1.jpg","img/img-rooms/22people-in-2.jpg","img/img-rooms/22people-in-3.jpg"],\
+	  "room_image_add": ["img/img-rooms/22people-in-1.jpg","img/img-rooms/22people-in-2.jpg","img/img-rooms/22people-in-3.jpg", "img/img-rooms/22people.jpg"],\
       "room_capability": 2,\
       "room_price": 200,\
       "room_options": ["TV", "wi-fi", "air-conditioning"]\
@@ -43,7 +43,7 @@ data = '{ "1":{\
       "room_small_description":"Наши одноместные номера площадью 11 м² включают постельное белье, пуховое одеяло, удобные подушки, шкаф и письменный стол.",\
       "room_big_description": "Наши одноместные номера площадью 11 м² включают постельное белье, пуховое одеяло, удобные подушки, шкаф и письменный стол. В них есть все необходимые удобства: кондиционер, бесплатный Wi-Fi, телевизор с плоским экраном и спутниковыми каналами и т. д. Также в номерах имеется чистая и светлая ванная комната с душем. В ней вы найдете все, что вам нужно, в том числе фен и туалетные принадлежности.",\
       "room_image": "img/img-rooms/11people.jpg",\
-	  "room_image_add": ["img/img-rooms/11people-in-1.jpg","img/img-rooms/11people-in-2.jpg","img/img-rooms/11people-in-3.jpg"],\
+	  "room_image_add": ["img/img-rooms/11people-in-1.jpg","img/img-rooms/11people-in-2.jpg","img/img-rooms/11people-in-3.jpg", "img/img-rooms/11people.jpg"],\
       "room_capability": 1,\
       "room_price": 100,\
       "room_options": ["wi-fi"]\
@@ -53,7 +53,7 @@ data = '{ "1":{\
       "room_small_description":"Это просторные номера площадью от 17 до 21 м², которые могут вместить три человека. В каждом из них есть постельное белье, одеяла и удобные подушки.",\
       "room_big_description": "Это просторные номера площадью от 17 до 21 м², которые могут вместить три или четыре человека. В каждом из них есть постельное белье, одеяла и удобные подушки.Кроме того, в вашем распоряжении отдельный кондиционер, бесплатный Wi-Fi, телевизор с плоским экраном, фен, сейф, приветственный набор и туалетные принадлежности... В номерах вы найдете все, что нужно, для приятного отдыха. Из каждого из них открывается прекрасный вид на очаровательную церковь или на каменные фасады зданий, расположенных на улице де Турбиго (rue de Turbigo).",\
       "room_image": "img/img-rooms/33people.jpg",\
-	  "room_image_add": ["img/img-rooms/33people-in-1.jpg","img/img-rooms/33people-in-2.jpg","img/img-rooms/33people-in-3.jpg"],\
+	  "room_image_add": ["img/img-rooms/33people-in-1.jpg","img/img-rooms/33people-in-2.jpg","img/img-rooms/33people-in-3.jpg", "img/img-rooms/33people.jpg"],\
       "room_capability": 3,\
       "room_price": 350,\
       "room_options": ["air-conditioning", "wi-fi", "breakfast", "TV"]\

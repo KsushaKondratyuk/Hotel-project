@@ -120,11 +120,11 @@ function fillRoom() {
 	str += "<section class='room-photos'>";
 	str += "<h2 class='visually-hidden'>Фото номера</h2>";
 	str += "<p class='room-photo-full'>";
-	str += "<img src='"+ roomData[id].room_image +"' alt='Фото номера большое'>";
+	str += "<img id='largeImg' src='"+ roomData[id].room_image +"' alt='Фото номера большое'>";
 	str += "</p>";
-	str += "<ul class='room-photo-small'>";
+	str += "<ul class='room-photo-small' id='thumbs'>";
 	roomData[id].room_image_add.forEach(element =>{
-		str += "<li><img src='" + element + "'  alt='Фото номера маленькое'></li>";
+		str += "<li><img class='small-image' src='" + element + "'  alt='Фото номера маленькое'></li>";
 	});
 	str += "</ul>";
 	str += "</section>";
@@ -169,6 +169,8 @@ function onShowButtonClick() {
  fillAllRooms(conditionItems);
 
 }
+
+
 
 
 // document.addEventListener('DOMContentLoaded', function() {

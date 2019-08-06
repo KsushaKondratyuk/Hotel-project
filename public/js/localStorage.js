@@ -1,6 +1,6 @@
 function addToLocalStorage(){
-	key = document.forms["localStorageAddForm"]["key"].value;
-	value = document.forms["localStorageAddForm"]["value"].value;
+	var key = document.forms["localStorageAddForm"]["key"].value;
+	var value = document.forms["localStorageAddForm"]["value"].value;
 	
 	if (localStorage.getItem(key)){
 		document.getElementById("result").innerHTML = "Key already exists, dont added";
@@ -13,8 +13,8 @@ function addToLocalStorage(){
 }
 
 function getValueByKey(){
-	key = document.forms["localStorageGetForm"]["key"].value;
-	data = localStorage.getItem(key);
+	var key = document.forms["localStorageGetForm"]["key"].value;
+	var data = localStorage.getItem(key);
 	if (data === null){
 		document.getElementById("result").innerHTML = "No values by key";
 		return false;
@@ -24,87 +24,87 @@ function getValueByKey(){
 }
 
 function readJSONToDict() {
-	roomData = JSON.parse(data);
+	var roomData = JSON.parse(data);
 	return roomData;
 }
 
+var DATA = readJSONToArray();
+const rooms_on_page = 6;
+
 function readJSONToArray() {
-	roomData = JSON.parse(data);
+	var roomData = JSON.parse(data);
 	var items = Object.keys(roomData).map(function(key) {
 		return [key, roomData[key]];
 	  });
 	return items;
 }
 
-function fillAllRooms(roomData) {
-	i = 0;
-	str = "";
-	for(var element in roomData) {
+function fillAllRooms(length) {
+	var str = "";
+	if (length > DATA.length){
+		length = DATA.length;
+		}
+	console.log(DATA);
+	for (var i = 0; i < length; i++) {
+		var room = DATA[i];
+		str += fillOneRoom(room);
+	}
+	document.getElementById("rooms").innerHTML = str;
+	document.getElementById("counts").innerHTML = "Найдено: " + DATA.length;
+}
+
+function fillOneRoom(roomData) {
+	var str = "";
 		str += " <li class='rooms-list-item'>";
 		str += " <div class='rooms-inner-container'>";
-		str +=	"<img class='rooms-picture' src=" + roomData[element][1].room_image + " alt='Фото одноместного номера'>";
+		str +=	"<img class='rooms-picture' src=" + roomData[1].room_image + " alt='Фото одноместного номера'>";
 		str += " <div class='rooms-description'>";
-		str += "<p class='rooms-name'>"+ roomData[element][1].room_name + "</p>";
+		str += "<p class='rooms-name'>"+ roomData[1].room_name + "</p>";
 		str += "<div class='rooms-type'>";
-		str += "<p class='general-description'>" + roomData[element][1].room_small_description + "</p>";
-		str += "<p class='rooms-price'>"+ roomData[element][1].room_price + "$" + "</p>";
+		str += "<p class='general-description'>" + roomData[1].room_small_description + "</p>";
+		str += "<p class='rooms-price'>"+ roomData[1].room_price + "$" + "</p>";
 		str += "</div>";
 		str += "<div class='rooms-actions'>";
-		str += "<a class='button button-more' href='room.html?id="+roomData[element][0]+"'>Подробнее</a>";
+		str += "<a class='button button-more' href='room.html?id="+ roomData[0] +"'>Подробнее</a>";
 		str += "<a class='button button-book' href=''>Забронировать</a>";
 		str += "</div>";
 		str += "</div>";
 		str += "</div>";
 		str += "</li>";
-		i += 1;
-	}
-	document.getElementById("rooms").innerHTML = str;
-	document.getElementById("counts").innerHTML = "Найдено: " + i;
+	return str;
 }
 
-function fillAllRoomsNotSorted(){
-	items = readJSONToArray();
-	fillAllRooms(items);
+function fillAllRoomsNotSorted() {
+	fillAllRooms(rooms_on_page);
 }
 
-function fillAllRoomsByPriceDesc(){
-	items = readJSONToArray();
-	//sort
-	items.sort(function(first, second) {
+function fillAllRoomsByPriceDesc() {
+	DATA.sort(function(first, second) {
 		return second[1].room_price - first[1].room_price;
 	  });
 	
-	fillAllRooms(items);
+	fillAllRooms(rooms_on_page);
 }
 
-function fillAllRoomsByPriceAsc(){
-	items = readJSONToArray();
-	//sort
-	items.sort(function(first, second) {
+function fillAllRoomsByPriceAsc() {
+	DATA.sort(function(first, second) {
 		return first[1].room_price - second[1].room_price;
 	  });
-	
-	fillAllRooms(items);
+	fillAllRooms(rooms_on_page);
 }
 
 function fillAllRoomsByCapabilityDesc(){
-	items = readJSONToArray();
-	//sort
-	items.sort(function(first, second) {
+	DATA.sort(function(first, second) {
 		return second[1].room_capability - first[1].room_capability;
 	  });
-	
-	fillAllRooms(items);
+	fillAllRooms(rooms_on_page);
 }
 
 function fillAllRoomsByCapabilityAsc(){
-	items = readJSONToArray();
-	//sort
-	items.sort(function(first, second) {
+	DATA.sort(function(first, second) {
 		return first[1].room_capability - second[1].room_capability;
 	});
-	
-	fillAllRooms(items);
+	fillAllRooms(rooms_on_page);
 }
 
 function fillRoom() {
@@ -113,7 +113,7 @@ function fillRoom() {
 	var url = new URL(url_string);
 	var id = url.searchParams.get("id");
 
-	roomData = readJSONToDict();
+	var roomData = readJSONToDict();
 	str = "";
 	str += "<h1 class='page-title'>"+ roomData[id].room_name +"</h1>";
 	str += "<div class='room-columns'>";
@@ -149,15 +149,14 @@ function fillRoom() {
 }
 
 function onShowButtonClick() {
- var items = readJSONToArray();
  var checkboxes = document.querySelectorAll('.input-item input:checked');
+ DATA = readJSONToArray();
 
  var conditions = Array.from(checkboxes).map(function (item) {
   return item.name;
  });
- console.log(conditions);
 
- var conditionItems = items.filter(function (room) {
+ DATA = DATA.filter(function (room) {
   for (var i = 0; i < conditions.length; i++) {
    if (room[1].room_options.indexOf(conditions[i]) === -1) {
 	return false;
@@ -166,11 +165,13 @@ function onShowButtonClick() {
  return true;
 });
 
- fillAllRooms(conditionItems);
+fillAllRooms(DATA.length);
 
 }
 
-
+document.addEventListener("DOMContentLoaded", function() {
+  fillAllRoomsNotSorted();
+});
 
 
 // document.addEventListener('DOMContentLoaded', function() {

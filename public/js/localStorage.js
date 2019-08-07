@@ -1,34 +1,10 @@
-function addToLocalStorage(){
-	var key = document.forms["localStorageAddForm"]["key"].value;
-	var value = document.forms["localStorageAddForm"]["value"].value;
-	
-	if (localStorage.getItem(key)){
-		document.getElementById("result").innerHTML = "Key already exists, dont added";
-		return false;
-	}
-	
-	localStorage.setItem(key, value);
-	document.getElementById("result").innerHTML = "Success";
-	return false;
-}
-
-function getValueByKey(){
-	var key = document.forms["localStorageGetForm"]["key"].value;
-	var data = localStorage.getItem(key);
-	if (data === null){
-		document.getElementById("result").innerHTML = "No values by key";
-		return false;
-	}
-	document.getElementById("result").innerHTML = data;
-	return false;
-}
-
 function readJSONToDict() {
 	var roomData = JSON.parse(data);
 	return roomData;
 }
 
 var DATA = readJSONToArray();
+
 const rooms_on_page = 6;
 
 function readJSONToArray() {
@@ -44,7 +20,6 @@ function fillAllRooms(length) {
 	if (length > DATA.length){
 		length = DATA.length;
 		}
-	console.log(DATA);
 	for (var i = 0; i < length; i++) {
 		var room = DATA[i];
 		str += fillOneRoom(room);
@@ -66,12 +41,40 @@ function fillOneRoom(roomData) {
 		str += "</div>";
 		str += "<div class='rooms-actions'>";
 		str += "<a class='button button-more' href='room.html?id="+ roomData[0] +"'>Подробнее</a>";
-		str += "<a class='button button-book' href=''>Забронировать</a>";
+		str += "<a class='button button-book' type='button'>Забронировать</a>";
 		str += "</div>";
 		str += "</div>";
 		str += "</div>";
 		str += "</li>";
 	return str;
+}
+
+function showPopUp() {
+	var str = "";
+		str +="<section class='modal'>";
+        str += "<form action='' class='modal-search-form'>";
+		str += "<div class='search-form-item'>";
+        str += "<label for='arrival-date'>Дата заезда:</label>";
+		str += "<input type='date' name='arrival-date' id='arrival-date'>";
+        str += "</div>";
+		str += "<div class='search-form-item'>";
+        str += "<label for='departure-date'>Дата выезда:</label>";
+		str += "<input type='date' name='departure-date' id='departure-date'>";
+		str += "</div>";
+        str += "<button class='button submit-button' type='button'>Забронировать</button>";
+        str += "<button class='modal-close'>Закрыть</button>";
+        str += "</form>";
+		str += "</section>";
+		str += "<section class='modal-responce'>";
+        str += "<div class='modal-red'>";
+        str += "<button class='modal-response-close'>Закрыть</button>";
+        str += "</div>";
+        str += "<div class='modal-green'>";
+		str += "<button class='modal-response-close'>Закрыть</button>";
+        str += "</div>";
+		str +="</section>";
+
+	document.getElementById("popUp").innerHTML = str;
 }
 
 function fillAllRoomsNotSorted() {
@@ -82,7 +85,7 @@ function fillAllRoomsByPriceDesc() {
 	DATA.sort(function(first, second) {
 		return second[1].room_price - first[1].room_price;
 	  });
-	
+
 	fillAllRooms(rooms_on_page);
 }
 
@@ -133,14 +136,14 @@ function fillRoom() {
 	str += "<p class='room-description'>" + roomData[id].room_big_description + "</p>";
 	str += "<p class='room-book'>";
 	str += "<b class='room-price'>" + roomData[id].room_price + "$</b>";
-	str += "<a href='' class='button'>Забронировать</a>";
+	str += "<a href='' class='button button-book'>Забронировать</a>";
 	str += "</p>";
 	str += "<h3>Услуги в даном номере:</h3>";
 	str += "<ul class='room-set'>";
 	roomData[id].room_options.forEach(element => {
 		str += "<li>"+element+"</li>";
 	});
-	
+
 	str += "</ul>";
 	str += "</section>"
 	str += "</div>"
@@ -173,12 +176,14 @@ document.addEventListener("DOMContentLoaded", function() {
   fillAllRoomsNotSorted();
 });
 
-
-// document.addEventListener('DOMContentLoaded', function() {
-// 	var sortUpByPrice = document.querySelectorAll('.sorting-arrows .up')[0];
-// 	var sortUpByCapability = document.querySelectorAll('.sorting-arrows .up')[1];
-// 	sortUpByPrice.addEventListener('click', fillAllRoomsByPriceAsc);
-// 	sortUpByCapability.addEventListener('click', fillAllRoomsByCapabilityAsc);
-// });
-
-
+document.addEventListener('click', function (evt) {
+	if (evt.target.classList.contains('button-book')) {
+		evt.preventDefault();
+		showPopUp();
+		var closeBtn = document.querySelector('.modal-close');
+		closeBtn.addEventListener('click', function(evt) {
+			evt.preventDefault();
+			document.getElementById("popUp").innerHTML = '';
+		});
+	}
+});

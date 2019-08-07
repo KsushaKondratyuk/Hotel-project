@@ -17,6 +17,7 @@ body {
     font-size: 12px;
     background-color: #ffffe6;
     color: black;
+    position: relative;
 }
 
 ul {
@@ -181,13 +182,10 @@ img {
     margin: 0 auto;
 }
 
-
-
 /* footer */
 .main-footer {
     width: 100%;
     min-height: 50px;
-    padding: 5px 0;
     background-color: #1a1a1a;
 }
 
@@ -347,7 +345,6 @@ img {
 
     /* main */
 
-   
     /* footer */   
     .footer-container {
         display: flex;
@@ -395,6 +392,5 @@ img {
     .social-button {
         width: 20%;
     }
-    
     
 }

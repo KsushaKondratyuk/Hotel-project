@@ -1,39 +1,60 @@
-/* 
 .modal-search-form {
     position: absolute;
-    top: 299px;
-    left: 50%;
-
-    display: none;
-
-    width: 458px;
-    padding: 55px;
-    margin-left: -284px;
-
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%; 
+    transform:translate(-50%, -50%);
+    width: 60%; 
+    text-align: center;
     background-color: #fff;
+    padding: 20px;
+    z-index: 4;
+}
 
+.modal-green {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform:translate(-50%, -50%);
+    display: none;
+    width: 20%;
+    height: 10%; 
+    text-align: center;
+    padding: 20px;
+    z-index: 5;
+    background-color: #b3ff99;
+}
+
+.modal-red {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform:translate(-50%, -50%);
+    display: none;
+    width: 20%;
+    height: 10%; 
+    text-align: center;
+    padding: 20px;
+    z-index: 5;
+    background-color: #ff6666;
 }
 
 .search-form-item {
-    margin: 0;
-    margin-bottom: 30px;
-    position: relative;
+    padding-bottom: 10px;
 }
 
-.search-form-item label {
-    font-size: 14px;
-    line-height: 26px; 
-    margin-right: 16px;
-    font-weight: 700;
-}
+ .search-form-item label {
+    font-weight: bold;
+} 
 
 .search-form-item input {
-    box-sizing: border-box;
-    padding: 12px 40px 12px 14px;
-    width: 346px;
+    width: 70%;
+    padding: 5px 0;
+    margin: 5px 0;
     background-color: #f2f2f2;
-    border: none;
+    border: none; 
+    text-align: center;
 }
 
 .submit-button {
@@ -41,5 +62,63 @@
     padding: 10px 0;
     color: #fff;
     background-color: #81b3d2;
+    cursor: pointer;
+} 
 
-}   */
+.modal-close,
+.modal-response-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after,
+.modal-response-close::before,
+.modal-response-close::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    width: 19px;
+    height: 3px;
+    background-color: grey;
+}
+
+.modal-close::before ,
+.modal-response-close::before {
+    transform: rotate(45deg);
+}
+
+
+.modal-close::after,
+.modal-response-close::after {
+    transform: rotate(-45deg);
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .modal-search-form {
+        padding: 40px;
+        width: 40%;
+    }
+    
+    .search-form-item {
+        padding-bottom: 10px;
+    }
+    
+    .search-form-item input {
+        padding: 20px 0;
+        margin-left: 20px;
+    }
+    
+}
